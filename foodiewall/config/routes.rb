@@ -1,4 +1,7 @@
 Foodiewall::Application.routes.draw do
+  get "user/name"
+  get "user/password_digest"
+  get "user/is_active"
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

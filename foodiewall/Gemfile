@@ -3,6 +3,11 @@ source 'https://rubygems.org'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.0.4'
 
+gem 'mongoid', github: 'mongoid/mongoid'
+
+gem "mongoid-paperclip", "~> 0.0.8", :require => "mongoid_paperclip"
+gem "aws-s3", :require => "aws/s3"
+
 
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.2'

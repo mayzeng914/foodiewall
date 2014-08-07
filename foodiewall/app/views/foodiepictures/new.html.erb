@@ -1,0 +1,6 @@
+<h1>What do you eat today?</h1>
+<%= form_for @foodiepicture do |f| %>
+  <%= f.file_filed :image %>
+  <%= f.text_filed :description %>
+  <%= f.submit "Upload" %>
+<% end %>
