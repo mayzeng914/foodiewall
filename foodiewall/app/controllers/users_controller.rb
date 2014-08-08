@@ -1,8 +1,8 @@
 class UsersController < ApplicationController
   
-  def index
-  	@user = User.where(is_active: true)
-  end
+  # def index
+  # 	@user = User.where(is_active: true)
+  # end
 
   def new
   	@user = User.new
@@ -10,8 +10,8 @@ class UsersController < ApplicationController
 
   def create
   	@user = User.new(params.require(:user).permit(:name, :password, :password_confirmation))
-  	if user.save
-  		redirect_to user_show_path
+  	if @user.save
+  		redirect_to foodiepictures_path
   	end
   end
 

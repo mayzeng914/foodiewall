@@ -1,4 +1,16 @@
 Foodiewall::Application.routes.draw do
+
+  get "seesions/new"
+  get "seesions/create"
+  get "seesions/destroy"
+  # get "foodiewall/" => "foodiepictures#index"
+
+  # get "foodiewall/new" => "foodiepictures#new"
+
+  resources :foodiepictures
+  resources :users
+  resource  :session, only: [:new, :create, :destroy]
+
   get "user/name"
   get "user/password_digest"
   get "user/is_active"

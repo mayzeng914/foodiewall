@@ -1,8 +1,8 @@
 <h1>FoodieWall</h1>
-<h2>What do you eat today?</h2>
+<h2>What do you wanna edit?</h2>
 <%= form_for @foodiepicture do |f| %>
   <%= f.file_field :image %>
   <%= f.text_field :description %>
-  <%= f.submit "Upload" %>
-<%= link_to "Cancel Upload", foodiepictures_path %>
+  <%= f.submit "Update!" %>
+<%= link_to "Cancel Edit", foodiepictures_path %>
 <% end %>
