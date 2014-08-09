@@ -8,6 +8,8 @@
 </head>
 <body>
 
+	<h1>Foodie Wall</h1>
+
 	<% if current_user %>
 	Welcome <%= current_user.name %>
 	<%= link_to 'log out', session_path, method: :delete %>

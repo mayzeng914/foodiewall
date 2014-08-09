@@ -1,6 +1,8 @@
-<%= form_for @user do |f| %>
-	<%= f.text_field :name, placeholder: "WHO ARE YOU????" %><br />
-	<%= f.password_field :password, placeholder: "password ..." %><br />
-	<%= f.password_field :password_confirmation, placeholder: "... and again" %>
-	<%= f.submit %>
+<%= form_for @user do |u| %>
+	<%= u.text_field :name, placeholder: "create a username" %><br />
+	<%= u.password_field :password, placeholder: "create a password" %><br />
+	<%= u.password_field :password_confirmation, placeholder: "retype the password" %>
+	<%= u.submit "Creat My Account!" %>
+	<br />
+	<%= link_to "Back to the homepage!", foodiepictures_path %>
 <% end if !current_user %>
