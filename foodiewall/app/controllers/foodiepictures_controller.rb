@@ -1,7 +1,7 @@
 class FoodiepicturesController < ApplicationController
 
 	def index
-		@foodiepictures = Foodiepicture.all		
+		@foodiepictures = Foodiepicture.all
 	end
 
 	def show
@@ -30,7 +30,7 @@ class FoodiepicturesController < ApplicationController
 	def edit
 		@foodiepicture = Foodiepicture.find(params[:id])
 		if (!current_user) || (@foodiepicture.user != current_user)
-			redirect_to new_session_path
+			redirect_to foodiepictures_path
 			return
 		end
 	end
@@ -38,7 +38,7 @@ class FoodiepicturesController < ApplicationController
 	def update
 		@foodiepicture = Foodiepicture.find(params[:id])
 		if (!current_user) || (@foodiepicture.user)
-			redirect_to new_session_path
+			redirect_to foodiepictures_path
 			return
 		elsif (@foodiepicture.user == current_user)
 			if @foodiepicture.update_attributes(params.require(:foodiepicture).permit(:image, :description) )
@@ -47,13 +47,20 @@ class FoodiepicturesController < ApplicationController
 				render 'edit'
 			end
 		else
-			redirect_to new_session_path
+			redirect_to foodiepictures_path
 		end
 	end
 
 	def destroy
 		@foodiepicture = Foodiepicture.find(params[:id])
-		@foodiepicture.destroy
-		redirect_to foodiepictures_path
+		if (!current_user) || (@foodiepicture.user)
+			redirect_to foodiepictures_path
+			return
+		elsif (@foodiepicture.user == current_user)
+			@foodiepicture.destroy
+			redirect_to foodiepictures_path
+		else
+			redirect_to foodiepictures_path
+		end
 	end
 end

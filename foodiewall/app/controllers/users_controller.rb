@@ -17,6 +17,7 @@ class UsersController < ApplicationController
 
   def show
   	@user = User.find(params[:id])
+    @foodiepictures = @user.foodiepictures
   end
 
   def edit

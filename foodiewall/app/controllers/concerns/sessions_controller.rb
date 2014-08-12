@@ -1,4 +1,5 @@
 class SessionsController < ApplicationController
+
   def new
   	@user = User.new
   	@is_login = true
@@ -11,6 +12,7 @@ class SessionsController < ApplicationController
   			redirect_to reactivate_user_path(u.id)
   		else
   			session[:user_id] = u.id.to_s
+        session[:name] = u.name.to_s
   			redirect_to foodiepictures_path
   		end
   	else
