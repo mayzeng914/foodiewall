@@ -10,9 +10,17 @@ class UsersController < ApplicationController
 
   def create
   	@user = User.new(params.require(:user).permit(:name, :password, :password_confirmation))
-  	if @user.save
-  		redirect_to foodiepictures_path
-  	end
+    # name_all.nature = true
+    # name_all = User.name.all
+    # name_all.each do |n|
+    #   if @user.name == n
+    #     name_all.nature = false
+    #   else
+      	if @user.save
+      		redirect_to foodiepictures_path
+      	end
+    #   end
+    # end
   end
 
   def show
@@ -36,7 +44,7 @@ class UsersController < ApplicationController
   		@user.update_attributes(params.require(:user).permit(:name, :password, :is_active))
   		redirect_to user_show_path
   	else
-  		reder :edit
+  		render :edit
   	end
   end
 

@@ -8,6 +8,8 @@ gem 'mongoid', github: 'mongoid/mongoid'
 gem "mongoid-paperclip", "~> 0.0.8", :require => "mongoid_paperclip"
 gem "aws-s3", :require => "aws/s3"
 
+gem 'bootstrap-sass', '~> 3.2.0'
+
 
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.2'

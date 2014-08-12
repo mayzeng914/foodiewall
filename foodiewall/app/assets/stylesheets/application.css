@@ -11,3 +11,16 @@
  *= require_self
  *= require_tree .
  */
+ @import 'bootstrap';
+
+h1 {
+	font-family: 'Unkempt', cursive;
+ 	font-size: 70px;
+}
+ .heading {
+ 	position: fixed;
+ 	font-color: white;
+ 	right: 8%;
+ 	top: 10% ;
+ }
+

@@ -5,7 +5,7 @@
 <ul>
 	<li>
 		<%= @foodiepictures.each do |p| %>
-		    <%= image_tag p.image.url %> 
+		    <%= image_tag p.image.url, width: "300px" %> 
 		    <h3><%= link_to p.description, foodiepicture_path(p) %></h3>
 		    <p>Uploaded by <%= link_to p.user.name, user_path(p.user_id) %></p>
 		    <%= link_to "Edit", edit_foodiepicture_path(p) %>

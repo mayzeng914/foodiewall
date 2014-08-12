@@ -1,6 +1,6 @@
 class Foodiepicture
   include Mongoid::Document
-  include Mongoid::Paperclip #what is this?
+  include Mongoid::Paperclip 
   field :description, type: String
   attr_accessor :user
   #field :picture_url, type: String

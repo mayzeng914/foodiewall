@@ -1,4 +1,4 @@
-<%= image_tag @foodiepicture.image.url %>
+<%= image_tag @foodiepicture.image.url, width: "500pxs" %>
 <h3><%= @foodiepicture.description %></h3>
 <p>by <%= @foodiepicture.user.name %></p>
 <%= link_to "Edit", edit_foodiepicture_path %>

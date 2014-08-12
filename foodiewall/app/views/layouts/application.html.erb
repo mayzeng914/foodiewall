@@ -1,5 +1,8 @@
 <!DOCTYPE html>
 <html>
+<header>
+	<link href='http://fonts.googleapis.com/css?family=Unkempt:700' rel='stylesheet' type='text/css'>
+</header>
 <head>
   <title>Foodiewall</title>
   <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
@@ -8,17 +11,23 @@
 </head>
 <body>
 
-	<h1>Foodie Wall</h1>
+	<div class="heading">
+		<h1>Foodie Wall</h1>
 
-	<% if current_user %>
-	Welcome <%= current_user.name %>
-	<%= link_to 'log out', session_path, method: :delete %>
-	<% else %>
-	<%= link_to 'sign up', new_user_path %>
-	<%= link_to 'log in', new_session_path %>
-	<% end %>
+		<% if current_user %>
+		Welcome! <%= current_user.name %>
+		<p><%= link_to 'log out', session_path, method: :delete %>
+		<% else %>
+		<p><%= link_to 'sign up', new_user_path %></p>
+		<p><%= link_to 'log in', new_session_path %>
+		<% end %></p>
+	</p>
 
-<%= yield %>
+    </div>
+
+			<%= yield %>
+
+
 
 </body>
 </html>
