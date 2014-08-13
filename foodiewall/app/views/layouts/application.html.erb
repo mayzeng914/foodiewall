@@ -17,16 +17,16 @@
 		<% if current_user %>
 
 		Welcome! <%= current_user.name %>
-		<p type="button" class="btn btn-success"><%= link_to 'log out', session_path, method: :delete %></p>
+		<%= link_to 'log out', session_path, class: "btn btn-lg btn-pink", method: :delete %></p>
 
 		<% else %>
 
 
 			<%= link_to 'sign up', '/foodiepictures?form_type=signup',
-				class: "btn btn-lg btn-mavis" %>
+				class: "btn btn-lg btn-pink" %>
 
 			<%= link_to 'log in', 'foodiepictures?form_type=login',
-				class: "btn btn-lg btn-mavis" %>
+				class: "btn btn-lg btn-pink" %>
 
 	<% end %>
 	

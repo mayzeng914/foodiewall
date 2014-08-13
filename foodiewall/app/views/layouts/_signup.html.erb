@@ -1,4 +1,4 @@
-<div class="info">
+<!-- <div class="info">
 <%= form_for @user_signup, {url: users_path}  do |u| %>
 		<%= u.text_field :name, placeholder: "create a username" %><br />
 		<%= u.password_field :password, placeholder: "create a password" %><br />
@@ -7,4 +7,34 @@
 		<br />
 	<%= link_to "Back to the homepage!", foodiepictures_path %>
 </div>
-<% end if !current_user %>
+<% end if !current_user %> -->
+
+<div class="info">
+<%= form_for @user_signup, {url: users_path} do |u| %>
+	<form class="form-horizontal" role="form">
+	  <div class="form-group btn-pink">
+	    <div class="col-sm-10">
+	     <%= u.text_field :name, placeholder: "creat a username", class: "form-control" %>
+	    </div>
+	  </div>
+	  <br /><br />
+	  <div class="form-group btn-pink">
+	    <div class="col-sm-10">
+	      <%= u.password_field :password, placeholder: "creat a password", class: "form-control" %>
+	    </div>
+	  </div>
+	  <br /><br />
+	  <div class="form-group btn-pink">
+	    <div class="col-sm-10">
+	      <%= u.password_field :password_confirmation, placeholder: "retype password", class: "form-control" %>
+	    </div>
+	  </div>
+	  <br /><br />
+	  <div class="form-group">
+	    <div class="col-sm-10">
+	      <%= u.submit "Creat My Account!", class: "btn btn-pink" %>
+	    </div>
+	  </div>
+	</form>
+	<% end if !current_user %>
+</div>
