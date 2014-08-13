@@ -4,7 +4,8 @@ class FoodiepicturesController < ApplicationController
 	def index
 		@foodiepictures = Foodiepicture.all
 		@form_type = params[:form_type]
-		@user_signup = User.new
+  		@user_signup = User.new
+		
 	end
 
 	def show
