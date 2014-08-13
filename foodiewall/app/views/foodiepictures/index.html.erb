@@ -1,3 +1,13 @@
+
+<h1 >
+	<% if @form_type == 'signup' %>
+		show the signup partial!
+	<% elsif @form_type == 'login' %>
+		show the login partial!
+	<% end %>
+
+</h1>
+
 <p>
 	<%= link_to "Homepage", foodiepictures_path %>
 	<%= link_to "Upload new food!", new_foodiepicture_path %>

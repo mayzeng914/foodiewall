@@ -1,9 +1,6 @@
 class SessionsController < ApplicationController
 
-  def new
-  	@user = User.new
-  	@is_login = true
-  end
+  
 
   def create
   	u = User.where(name: params[:user][:name]).first
@@ -16,7 +13,7 @@ class SessionsController < ApplicationController
   			redirect_to foodiepictures_path
   		end
   	else
-  		redirect_to new_session_path
+  		redirect_to foodiepictures_path
   	end
   end
 

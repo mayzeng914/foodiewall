@@ -1,7 +1,10 @@
 class FoodiepicturesController < ApplicationController
+	before_action :login
 
 	def index
 		@foodiepictures = Foodiepicture.all
+		@form_type = params[:form_type]
+		@user_signup = User.new
 	end
 
 	def show
@@ -10,7 +13,7 @@ class FoodiepicturesController < ApplicationController
 
 	def new
 		if !current_user
-			redirect_to new_session_path
+			redirect_to foodiepictures_path
 			return
 		end
 		@foodiepicture = Foodiepicture.new
@@ -18,7 +21,7 @@ class FoodiepicturesController < ApplicationController
 
 	def create
 		if !current_user
-			redirect_to new_session_path
+			redirect_to foodiepictures_path
 			return
 		end
 		foodiepicture = current_user.foodiepictures.new(params.require(:foodiepicture).permit(:image, :description) )
@@ -63,4 +66,13 @@ class FoodiepicturesController < ApplicationController
 			redirect_to foodiepictures_path
 		end
 	end
+
+	def login
+	  	@user_login = User.new
+	  	@is_login = true
+  	end
+
+  	def signup
+  	    @user_signup = User.new
+    end
 end

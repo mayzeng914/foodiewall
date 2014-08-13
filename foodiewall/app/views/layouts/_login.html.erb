@@ -1,0 +1,37 @@
+<%
+=begin %>
+<div class="info">
+<%= form_for @user_login, {url: session_path} do |u| %>
+  <%= u.text_field :name, placeholder: "username" %><br />
+  <%= u.password_field :password, placeholder: "password" %>
+<%= u.submit "Log In!" %>
+<br />
+<%= link_to "Back to the homepage!", foodiepictures_path %>
+<% end %>
+</div>
+<%
+=end%>
+
+<div class="info">
+<%= form_for @user_login, {url: session_path} do |u| %>
+	<form class="form-horizontal" role="form">
+	  <div class="form-group has-success">
+	    <div class="col-sm-10">
+	     <%= u.text_field :name, placeholder: "username", class: "form-control" %>
+	    </div>
+	  </div>
+	  <br /><br />
+	  <div class="form-group has-success">
+	    <div class="col-sm-10">
+	      <%= u.password_field :password, placeholder: "password", class: "form-control" %>
+	    </div>
+	  </div>
+	  <br /><br />
+	  <div class="form-group">
+	    <div class="col-sm-offset-2 col-sm-10">
+	      <%= u.submit "Log In!", class: "btn btn-success" %>
+	    </div>
+	  </div>
+	</form>
+	<% end %>
+</div>

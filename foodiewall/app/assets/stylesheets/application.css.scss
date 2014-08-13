@@ -13,14 +13,29 @@
  */
  @import 'bootstrap';
 
-h1 {
-	font-family: 'Unkempt', cursive;
- 	font-size: 70px;
-}
+
  .heading {
  	position: fixed;
- 	font-color: white;
+ 	color: white;
  	right: 8%;
  	top: 10% ;
+	 	h1 {
+		font-family: 'Unkempt', cursive;
+	 	font-size: 70px;
+	 	color: pink;
+	 	text-shadow: 1px 1px 1px black;
+	}
  }
 
+ #signup {
+ 	right: 8%;
+ 	top:10%;
+ }
+
+.btn-mavis {
+	background-color: pink;
+	color: white;
+	&:hover {
+		background-color: lightpink;
+	}
+}

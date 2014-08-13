@@ -1,8 +1,0 @@
-<%= form_for @user, {url: session_path} do |u| %>
-  <%= u.text_field :name, placeholder: "username" %><br />
-  <%= u.password_field :password, placeholder: "password" %>
-<%= u.submit "Log In!" %>
-<br />
-<%= link_to "Back to the homepage!", foodiepictures_path %>
-<% end %>
-

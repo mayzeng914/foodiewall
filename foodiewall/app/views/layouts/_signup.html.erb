@@ -1,5 +1,5 @@
 <div class="info">
-<%= form_for @user do |u| %>
+<%= form_for @user_signup, {url: users_path}  do |u| %>
 		<%= u.text_field :name, placeholder: "create a username" %><br />
 		<%= u.password_field :password, placeholder: "create a password" %><br />
 		<%= u.password_field :password_confirmation, placeholder: "retype the password" %>

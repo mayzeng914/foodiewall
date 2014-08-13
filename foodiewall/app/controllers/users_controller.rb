@@ -1,12 +1,10 @@
 class UsersController < ApplicationController
-  
+  before_action :login
   # def index
   # 	@user = User.where(is_active: true)
   # end
 
-  def new
-  	@user = User.new
-  end
+
 
   def create
   	@user = User.new(params.require(:user).permit(:name, :password, :password_confirmation))
@@ -53,6 +51,11 @@ class UsersController < ApplicationController
   	@user.is_active = false
   	@user.save
   	redirect_to users_path
+  end
+
+  def login
+    @user_login = User.new
+    @is_login = true
   end
 
 end
