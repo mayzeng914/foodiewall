@@ -7,18 +7,22 @@ class UsersController < ApplicationController
 
 
   def create
+    puts "DEBUGGING!!!"
+    puts "==========="
   	@user = User.new(params.require(:user).permit(:name, :password, :password_confirmation))
+    puts @user
     # name_all.nature = true
     # name_all = User.name.all
     # name_all.each do |n|
     #   if @user.name == n
     #     name_all.nature = false
     #   else
-      	if @user.save
-      		redirect_to foodiepictures_path
-      	end
-    #   end
-    # end
+    if @user.save
+      redirect_to foodiepictures_path
+    else
+      puts @user.errors.messages
+      puts "The user was not saved"
+    end
   end
 
   def show
