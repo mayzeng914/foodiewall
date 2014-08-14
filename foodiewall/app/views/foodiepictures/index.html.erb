@@ -3,14 +3,13 @@
 
 
 <ul>
+	<%= @foodiepictures.each do |p| %>
 	<li>
-		<%= @foodiepictures.each do |p| %>
-		    <%= image_tag p.image.url, width: "150px" %> 
-		    <h3><%= link_to p.description, foodiepicture_path(p) %></h3>
-		    <p>Uploaded by <%= link_to p.user.name, user_path(p.user_id) %></p>
-		    <%= link_to "Edit", edit_foodiepicture_path(p) %>
-		    <%= link_to "Delete", foodiepicture_path(p), method: :delete, data: { confirm: "Are you sure you want to delete #{p.description}?"} %>
-		    <br />
+		    <%= image_tag p.image.url, width: "150px", class: "img-thumbnail" %> 
+		    <h3><%= link_to p.description, foodiepicture_path(p), class: "btn btn-pink" %></h3>
+		    <p class: "btn-pink">Uploaded by <%= link_to p.user.name, user_path(p.user_id) %></p>
+		    <%= link_to "Edit", edit_foodiepicture_path(p), class: "btn btn-pink" %>
+		    <%= link_to "Delete", foodiepicture_path(p), method: :delete, data: { confirm: "Are you sure you want to delete #{p.description}?"}, class: "btn btn-pink" %>
         <% end %>
     </li>
 

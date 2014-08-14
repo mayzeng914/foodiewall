@@ -19,7 +19,18 @@ body {
     font-color: pink;
  }*/
 
- ul li {
-     width: 800px;
-     display: inline;
+h3, p {
+	color: pink;
+}
+ ul {
+	color: pink;
+	width: 700px;
+	padding-top: 2%;
  }
+
+ li {
+    padding: 10px;
+	width: 200px;
+	display: inline-block;
+}
+

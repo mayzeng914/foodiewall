@@ -31,9 +31,18 @@ class FoodiepicturesController < ApplicationController
 		end
 		foodiepicture = current_user.foodiepictures.new(params.require(:foodiepicture).permit(:image, :description) )
 		if foodiepicture.save
-			redirect_to foodiepictures_path
+			redirect_to user_path(current_user_id)
 		end
 	end
+
+	def login
+	  	@user_login = User.new
+	  	@is_login = true
+  	end
+
+  	def signup
+  	    @user_signup = User.new
+    end
 
 	def edit
 		@foodiepicture = Foodiepicture.find(params[:id])
@@ -72,12 +81,4 @@ class FoodiepicturesController < ApplicationController
 		end
 	end
 
-	def login
-	  	@user_login = User.new
-	  	@is_login = true
-  	end
-
-  	def signup
-  	    @user_signup = User.new
-    end
 end

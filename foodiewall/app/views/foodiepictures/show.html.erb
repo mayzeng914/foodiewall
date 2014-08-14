@@ -3,4 +3,3 @@
 <p>by <%= @foodiepicture.user.name %></p>
 <%= link_to "Edit", edit_foodiepicture_path %>
 <%= link_to "Delete", :foodiepicture, method: :delete, data: { confirm: "Are you sure you want to delete #{@foodiepicture.description}?"} %>
-<%= link_to "Back to the homepage!", foodiepictures_path %>
