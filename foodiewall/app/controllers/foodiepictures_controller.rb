@@ -31,7 +31,7 @@ class FoodiepicturesController < ApplicationController
 		end
 		foodiepicture = current_user.foodiepictures.new(params.require(:foodiepicture).permit(:image, :description) )
 		if foodiepicture.save
-			redirect_to user_path(current_user_id)
+			redirect_to foodiepictures_path
 		end
 	end
 
@@ -70,14 +70,11 @@ class FoodiepicturesController < ApplicationController
 
 	def destroy
 		@foodiepicture = Foodiepicture.find(params[:id])
-		if (!current_user) || (@foodiepicture.user)
-			redirect_to foodiepictures_path
-			return
-		elsif (@foodiepicture.user == current_user)
+		if (@foodiepicture.user == current_user)
 			@foodiepicture.destroy
-			redirect_to foodiepictures_path
+		 	redirect_to foodiepictures_path
 		else
-			redirect_to foodiepictures_path
+		 	redirect_to foodiepictures_path
 		end
 	end
 

@@ -1,5 +1,7 @@
-<%= image_tag @foodiepicture.image.url, width: "500pxs" %>
-<h3><%= @foodiepicture.description %></h3>
-<p>by <%= @foodiepicture.user.name %></p>
-<%= link_to "Edit", edit_foodiepicture_path %>
-<%= link_to "Delete", :foodiepicture, method: :delete, data: { confirm: "Are you sure you want to delete #{@foodiepicture.description}?"} %>
+<div class="singlepic">
+<%= image_tag @foodiepicture.image.url, width: "500pxs", class: "img-thumbnail" %>
+<h3><%= @foodiepicture.description, class: "btn btn-pink" %></h3>
+<p class="btn btn-pink">by <%= @foodiepicture.user.name %></p>
+<%= link_to "Edit", edit_foodiepicture_path, class: "btn btn-pink" %>
+<%= link_to "Delete", :foodiepicture, method: :delete, data: { confirm: "Are you sure you want to delete #{@foodiepicture.description}?"}, class: "btn btn-pink" %>
+</div>
