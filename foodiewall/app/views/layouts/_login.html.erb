@@ -17,19 +17,19 @@
 	<form class="form-horizontal" role="form">
 	  <div class="form-group btn-pink">
 	    <div class="col-sm-10">
-	     <%= u.text_field :name, placeholder: "username", class: "form-control" %>
+	     <%= u.text_field :name, placeholder: "username", class: "form-control btn-block" %>
 	    </div>
 	  </div>
 	  <br /><br />
 	  <div class="form-group btn-pink">
 	    <div class="col-sm-10">
-	      <%= u.password_field :password, placeholder: "password", class: "form-control" %>
+	      <%= u.password_field :password, placeholder: "password", class: "form-control btn-block" %>
 	    </div>
 	  </div>
 	  <br /><br />
 	  <div class="form-group">
-	    <div class="col-sm-offset-2 col-sm-10">
-	      <%= u.submit "Log In!", class: "btn btn-pink" %>
+	    <div class="col-sm-10">
+	      <%= u.submit "Log In!", class: "btn btn-pink btn-block" %>
 	    </div>
 	  </div>
 	</form>

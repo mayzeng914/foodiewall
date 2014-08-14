@@ -14,19 +14,23 @@
 	<div class="heading">
 		<h1>Foodie Wall</h1>
 
+			<%= link_to "Homepage", foodiepictures_path, class: "btn btn-lg btn-pink btn-block" %>
+			<%= link_to "Upload new food!", new_foodiepicture_path, class: "btn btn-lg btn-pink btn-block" %>
+
 		<% if current_user %>
 
 		Welcome! <%= current_user.name %>
-		<%= link_to 'log out', session_path, class: "btn btn-lg btn-pink", method: :delete %></p>
+		<%= link_to 'log out', session_path, class: "btn btn-lg btn-pink btn-block", method: :delete %></p>
 
 		<% else %>
 
+			<%= link_to 'log in', 'foodiepictures?form_type=login',
+				class: "btn btn-lg btn-pink btn-block" %>
+
 
 			<%= link_to 'sign up', '/foodiepictures?form_type=signup',
-				class: "btn btn-lg btn-pink" %>
+				class: "btn btn-lg btn-pink btn-block" %>
 
-			<%= link_to 'log in', 'foodiepictures?form_type=login',
-				class: "btn btn-lg btn-pink" %>
 
 	<% end %>
 	

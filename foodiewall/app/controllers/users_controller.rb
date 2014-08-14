@@ -15,6 +15,7 @@ class UsersController < ApplicationController
     #     name_all.nature = false
     #   else
       	if @user.save
+          session[:user_id] = @user.id.to_s
       		redirect_to foodiepictures_path
       	end
     #   end

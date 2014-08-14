@@ -1,15 +1,19 @@
 class FoodiepicturesController < ApplicationController
-	before_action :login
+	before_action :login, :signup
 
 	def index
 		@foodiepictures = Foodiepicture.all
 		@form_type = params[:form_type]
-  		@user_signup = User.new
-		
+  		# @user_signup = User.new
+
 	end
 
 	def show
+		if current_user
 		@foodiepicture = Foodiepicture.find(params[:id])
+	    else
+	       redirect_to foodiepictures_path
+	    end
 	end
 
 	def new
