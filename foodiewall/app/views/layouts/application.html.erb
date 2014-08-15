@@ -16,7 +16,7 @@
 
 			<% if current_user %>
 
-				Welcome! <%= link_to current_user.name, user_path(current_user.id) %>
+				<button class="btn btn-lg btn-pink btn-block">Welcome! <%= link_to current_user.name, user_path(current_user.id) %></button>
 				<%= link_to 'log out', session_path, class: "btn btn-lg btn-pink btn-block", method: :delete %></p>
 
 			<% else %>
@@ -35,11 +35,11 @@
 			<%= link_to "Upload new food!", new_foodiepicture_path, class: "btn btn-lg btn-pink btn-block" %>
 
 
-		<% if @form_type == 'signup' %>
-			<%= render 'layouts/signup' %>
-		<% elsif @form_type == 'login' %>
-			<%= render 'layouts/login' %>
-		<% end %>
+			<% if @form_type == 'signup' %>
+				<%= render 'layouts/signup' %>
+			<% elsif @form_type == 'login' %>
+				<%= render 'layouts/login' %>
+			<% end %>
 
 	
     </div>

@@ -8,18 +8,11 @@ class UsersController < ApplicationController
 
   def create
   	@user = User.new(params.require(:user).permit(:name, :password, :password_confirmation))
-    # name_all.nature = true
-    # name_all = User.name.all
-    # name_all.each do |n|
-    #   if @user.name == n
-    #     name_all.nature = false
-    #   else
-      	if @user.save
+    
+    if @user.save
           session[:user_id] = @user.id.to_s
       		redirect_to foodiepictures_path
       	end
-    #   end
-    # end
   end
 
   def show

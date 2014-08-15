@@ -6,11 +6,11 @@
 	<%= @foodiepictures.each do |p| %>
 	<li>
 		    <%= image_tag p.image.url, width: "150px", class: "img-thumbnail" %> 
-		    <h3><%= link_to p.description, foodiepicture_path(p), class: "btn btn-pink" %></h3>
-		    <p class: "btn-pink">Uploaded by <%= link_to p.user.name, user_path(p.user_id) %></p>
+		    <h1><%= link_to p.description, foodiepicture_path(p), class: "btn btn-pink" %></h1>
+		    <h class="btn btn-pink"><%= link_to "Uploaded by " + p.user.name, user_path(p.user_id) %></h>
 		    <%= link_to "Edit", edit_foodiepicture_path(p), class: "btn btn-pink" %>
 		    <%= link_to "Delete", foodiepicture_path(p), method: :delete, data: { confirm: "Are you sure you want to delete #{p.description}?"}, class: "btn btn-pink" %>
-        <% end %>
     </li>
+    <% end %>
 
 </ul>

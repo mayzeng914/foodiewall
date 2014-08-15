@@ -9,3 +9,15 @@
  	right: 11%;
  	top: 68% ;
 }
+
+.userpic {
+    width: 400px;	
+}
+
+.btn-pink {
+	background-color: pink;
+	color: white;
+	&:hover {
+		background-color: lightpink;
+	}
+}
