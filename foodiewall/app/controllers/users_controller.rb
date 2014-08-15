@@ -8,11 +8,13 @@ class UsersController < ApplicationController
 
   def create
   	@user = User.new(params.require(:user).permit(:name, :password, :password_confirmation))
-    
+    @foodiepictures = Foodiepicture.all
     if @user.save
           session[:user_id] = @user.id.to_s
       		redirect_to foodiepictures_path
-      	end
+    else
+      render 'foodiepictures/index'
+    end
   end
 
   def show

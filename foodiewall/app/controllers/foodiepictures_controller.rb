@@ -4,7 +4,6 @@ class FoodiepicturesController < ApplicationController
 	def index
 		@foodiepictures = Foodiepicture.all
 		@form_type = params[:form_type]
-  		# @user_signup = User.new
 
 	end
 
@@ -47,7 +46,7 @@ class FoodiepicturesController < ApplicationController
 	def edit
 		@foodiepicture = Foodiepicture.find(params[:id])
 		if (!current_user) || (@foodiepicture.user != current_user)
-			redirect_to foodiepictures_path
+			redirect_to user_path(current_user)
 			return
 		end
 	end
@@ -59,7 +58,7 @@ class FoodiepicturesController < ApplicationController
 			return
 		elsif (@foodiepicture.user == current_user)
 			if @foodiepicture.update_attributes(params.require(:foodiepicture).permit(:image, :description) )
-				redirect_to foodiepictures_path
+				redirect_to user_path(current_user)
 			else
 				render 'edit'
 			end
@@ -72,7 +71,7 @@ class FoodiepicturesController < ApplicationController
 		@foodiepicture = Foodiepicture.find(params[:id])
 		if (@foodiepicture.user == current_user)
 			@foodiepicture.destroy
-		 	redirect_to foodiepictures_path
+		 	redirect_to user_path(current_user)
 		else
 		 	redirect_to foodiepictures_path
 		end
