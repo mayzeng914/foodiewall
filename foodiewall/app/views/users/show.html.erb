@@ -1,6 +1,6 @@
 <div class="userpic">
 <ul>
-	<%= @foodiepictures.each do |p| %>
+	<% @foodiepictures.each do |p| %>
 	    <li>
 		    <%= image_tag p.image.url, width: "200px", class: "img-thumbnail" %> 
 		    <h1><%= link_to p.description, foodiepicture_path(p), class: "btn btn-pink" %></h1>

@@ -4,7 +4,7 @@
 
 	<div class="btn-group btn-block">
 		<h class="btn btn-pink"><%= @foodiepicture.description %></h>
-	    <h class="btn btn-pink">by <%= @foodiepicture.user.name %></h>
+	    <h class="btn btn-pink">by <%= link_to @foodiepicture.user.name, user_path(@foodiepicture.user) %></h>
 	    <%= link_to "Edit", edit_foodiepicture_path, class: "btn btn-pink" %>
 		<%= link_to "Delete", :foodiepicture, method: :delete, data: { confirm: "Are you sure you want to delete #{@foodiepicture.description}?"}, class: "btn btn-pink" %>
 	</div>
