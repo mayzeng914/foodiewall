@@ -8,7 +8,7 @@ class User
   validates_presence_of :name
   validates_uniqueness_of :name
   validates_confirmation_of :password_digest
-  validates_presence_of :password_digest
+  validates_presence_of :password
   validates_length_of :name, minimum: 4, maximum: 11
   validates_length_of :password, minimum: 4, maximum: 11
 

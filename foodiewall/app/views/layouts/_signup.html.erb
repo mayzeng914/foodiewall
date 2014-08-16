@@ -1,30 +1,6 @@
-<!-- <div class="info">
-<%= form_for @user_signup, {url: users_path}  do |u| %>
-		<%= u.text_field :name, placeholder: "create a username" %><br />
-		<%= u.password_field :password, placeholder: "create a password" %><br />
-		<%= u.password_field :password_confirmation, placeholder: "retype the password" %>
-		<%= u.submit "Creat My Account!" %>
-		<br />
-	<%= link_to "Back to the homepage!", foodiepictures_path %>
-</div>
-<% end if !current_user %> -->
 
 <div>
-<%= form_for @user_signup, {url: users_path} do |u| %>
-
-	<% if @user_signup.errors.any? %>
-		<div id="error_explanation">
-		  <h2><%= pluralize(@user_signup.errors.count, "error") %> prohibited this feature from being saved:</h2>
-
-		  <ul class="list-group">
-		  <% @user_signup.errors.full_messages.each do |msg| %>
-		    <li class="list-group-item list-group-item-danger"><%= msg %></li>
-		  <% end %>
-		  </ul>
-		</div>
-	<% end %>
-
-
+<%= form_for @user  do |u| %>
 
 	<form class="form-horizontal" role="form">
 	  <div class="form-group btn-pink btn-block">
@@ -53,3 +29,8 @@
 	</form>
 	<% end if !current_user %>
 </div>
+
+
+
+
+

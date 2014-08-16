@@ -40,7 +40,7 @@ class FoodiepicturesController < ApplicationController
   	end
 
   	def signup
-  	    @user_signup = User.new
+  	    @user = User.new
     end
 
 	def edit
