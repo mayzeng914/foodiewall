@@ -10,6 +10,7 @@ gem "aws-s3", :require => "aws/s3"
 
 gem 'bootstrap-sass', '~> 3.2.0'
 
+gem 'rails_12factor'
 
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.2'

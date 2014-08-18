@@ -53,7 +53,7 @@ class FoodiepicturesController < ApplicationController
 
 	def update
 		@foodiepicture = Foodiepicture.find(params[:id])
-		if (!current_user) || (@foodiepicture.user)
+		if (!current_user) || (@foodiepicture.user != current_user)
 			redirect_to foodiepictures_path
 			return
 		elsif (@foodiepicture.user == current_user)
