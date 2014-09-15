@@ -1,5 +1,7 @@
 Foodiewall::Application.routes.draw do
 
+  root 'foodiepictures#index'
+
   get "sessions/new"
   get "sessions/create"
   get "sessions/destroy"

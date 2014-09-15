@@ -7,7 +7,7 @@ class UsersController < ApplicationController
 
 
   def create
-  	@user = User.new(params.require(:user).permit(:name, :password, :password_confirmation))
+  	@user = User.new(params.require(:user).permit(:name, :password, :password_confirmation, :image))
     @foodiepictures = Foodiepicture.all
     respond_to do |format|
 

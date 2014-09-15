@@ -10,6 +10,7 @@ class SessionsController < ApplicationController
   		else
   			session[:user_id] = u.id.to_s
         session[:name] = u.name.to_s
+        session[:image] = u.image
   			redirect_to foodiepictures_path
   		end
   	else

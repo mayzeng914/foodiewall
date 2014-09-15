@@ -1,6 +1,6 @@
 
 <div>
-<%= form_for @user  do |u| %>
+<%= form_for @user do |u| %>
 
 	<form class="form-horizontal" role="form">
 	  <div class="form-group btn-pink btn-block">
@@ -18,6 +18,12 @@
 	  <div class="form-group btn-pink btn-block">
 	    <div class="col-sm-12">
 	      <%= u.password_field :password_confirmation, placeholder: "retype the password", class: "form-control" %>
+	    </div>
+	  </div>
+	  <br /><br />
+	  <div class="form-group btn-pink btn-block">
+	    <div class="col-sm-12">
+	      <%= u.file_field :image %>
 	    </div>
 	  </div>
 	  <br /><br />

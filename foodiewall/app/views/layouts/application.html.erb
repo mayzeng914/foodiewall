@@ -16,7 +16,12 @@
 
 			<% if current_user %>
 
-				<button class="btn btn-lg btn-pink btn-block">Welcome! <%= link_to current_user.name, user_path(current_user.id) %></button>
+				<button class="btn btn-lg btn-pink btn-block">Welcome! 
+					<% if current_user.image %>
+						<img src="<%= current_user.image %>" id="userpic">
+					<% end %>					
+					<%= link_to current_user.name, user_path(current_user.id) %>
+				</button>
 				<%= link_to 'log out', session_path, class: "btn btn-lg btn-pink btn-block", method: :delete %></p>
 
 			<% else %>
